@@ -1,0 +1,97 @@
+export default {
+  view: 'test',
+  preview: '/img/blocks/test.png',
+  name: 'Тест',
+  id: '',
+  content: [
+    {
+      type: 'text',
+      name: 'title',
+      label: 'Заголовок',
+      help: '',
+      val: '',
+    },
+    {
+      type: 'textArea',
+      name: 'textArea',
+      label: 'Текст',
+      help: 'Введите текст',
+      val: '',
+    },
+    {
+      type: 'html',
+      name: 'text',
+      label: 'Описание',
+      help: '',
+      val: '',
+    },
+    {
+      type: 'img',
+      name: 'img',
+      label: 'Картинка',
+      help: '',
+      val: [],
+    },
+    {
+      type: 'file',
+      name: 'file',
+      label: 'Файл',
+      help: '',
+      val: [],
+    },
+    {
+      type: 'radio',
+      name: 'active',
+      label: 'Активность',
+      help: '',
+      val: false,
+    },
+    {
+      type: 'gallery',
+      name: 'gallary',
+      label: 'Галерея',
+      help: '',
+      val: [],
+    },
+    {
+      type: 'collection',
+      name: 'slides',
+      label: 'Слайды',
+      labelItem: 'Слайд',
+      expand: 'false',
+      fields: [
+        {
+          type: 'text',
+          name: 'name',
+          label: 'Название bold',
+          help: '',
+          val: '',
+        },
+        {
+          type: 'text',
+          name: 'nameLight',
+          label: 'Название light',
+          help: '',
+          val: '',
+        },
+        {
+          type: 'text',
+          name: 'desc',
+          label: 'Описание',
+          help: '',
+          val: '',
+        },
+        {
+          type: 'img',
+          name: 'b_main-img',
+          label: 'Изображение',
+          help: '',
+          val: {},
+        },
+      ],
+      val: [],
+
+    },
+
+  ],
+};

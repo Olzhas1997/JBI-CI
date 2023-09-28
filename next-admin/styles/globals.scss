@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.tiptap-redactor {
+  border-radius: 10px;
+  border-color: #196FA8;
+  button {
+    padding: 2px 6px;
+    font-size: 16px;
+    border: 1px solid #196FA8;
+    margin: 4px;
+    border-radius: 10px;
+    &.is-active {
+      color: #fff;
+      background: #196FA8;
+    }
+  }
+  .ProseMirror {
+    ul {
+      padding-left: 20px;
+      list-style-type: disc;
+    }
+    ol {
+      padding-left: 20px;
+      list-style-type: decimal;
+    }
+    margin-top: 20px;
+    border: 1px solid #196FA8;
+    border-radius: 10px;
+    padding: 10px;
+    &.ProseMirror-focused {
+      border: 1px solid black;
+    }
+  }
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  h4 {
+    font-size: 22px;
+  }
+  h5 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 18px;
+  }
+  a {
+    color: blue;
+  }
+}
+
+@layer components {
+  .button-white {
+    @apply w-full flex justify-center items-center px-8 py-3 sm:px-12 sm:py-5 rounded-lg bg-white text-sm text-black hover:text-white uppercase hover:bg-black transition duration-500 cursor-pointer
+  }
+
+  .button-black {
+    @apply w-full flex justify-center items-center px-8 py-3 sm:px-12 sm:py-5 rounded-lg bg-black text-sm text-white hover:text-black uppercase hover:bg-white transition duration-500 cursor-pointer
+  }
+
+  .button-gray {
+    @apply w-full flex justify-center items-center px-8 py-3 sm:px-12 sm:py-5 rounded-lg bg-gray-300 text-sm text-black hover:text-black uppercase hover:bg-white transition duration-500 cursor-pointer
+  }
+
+  .t1 {
+    @apply text-xl
+  }
+
+  .t1-bold {
+    @apply font-bold text-base xl:text-xl
+  }
+
+  .t2 {
+    @apply text-sm xl:text-lg
+  }
+
+  .t2-bold {
+    @apply font-bold text-base xxl:text-lg
+  }
+
+  .t3 {
+    @apply text-sm xxl:text-base
+  }
+
+  .t3-bold {
+    @apply font-bold text-sm sm:text-base
+  }
+
+  .t4 {
+    @apply text-sm
+  }
+
+  .t4-bold {
+    @apply font-bold text-sm
+  }
+
+  .t5 {
+    @apply text-xs
+  }
+
+  .t5-bold {
+    @apply font-bold text-xs
+  }
+
+  .link {
+    @apply text-[15px]
+  }
+  .flex-centered {
+    @apply flex justify-center items-center
+  }
+  .section-gutter {
+    @apply my-10 lg:my-20 xl:my-20 xxl:my-28;
+  }
+  .title-gutter {
+    @apply mb-6 md:mb-12
+  }
+}
+

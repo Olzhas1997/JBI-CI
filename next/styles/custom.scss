@@ -1,0 +1,272 @@
+
+.arrow-path {
+  stroke-dasharray: 156;
+  stroke-dashoffset: 156;
+}
+
+.arrow-path-small {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+}
+.arrow, .arrow-small {
+  position: absolute;
+  z-index: 20;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  clip-path: polygon(0 0, 0 100%, 100% 50%);
+}
+
+.arrow-line {
+  position: absolute;
+  width: 50px;
+  height: 1px;
+  top: 50%;
+  right: 50%;
+  z-index: 1000;
+}
+.arrow-line-small {
+  position: absolute;
+  width: 40px;
+  height: 1px;
+  top: 50%;
+  right: 50%;
+  z-index: 1000;
+}
+@keyframes dash {
+  from {
+    stroke-dashoffset: 156;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes dash-small {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dashReverse {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 156;
+  }
+}
+@keyframes dashReverseSmall {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 100;
+  }
+}
+.news__slider {
+  .swiper-slide {
+    height: auto;
+  }
+}
+
+.news-slider,
+.completed_projects-slider,
+.current_projects__slider,
+.project-gallery__main_slider,
+.project-gallery__add_slider,
+.common_block {
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  .swiper-button-disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
+
+.current_projects {
+  .swiper-button-disabled {
+    pointer-events: none;
+    opacity: 0;
+  }
+}
+
+
+.news-item {
+  position: relative;
+  color: #2d2d2d;
+}
+
+.news-item::before {
+  content: '';
+  background-color: #5D7192;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  z-index: 10;
+  opacity: 0.7;
+  transition: all .3s ease-in-out;
+}
+
+.news-item:hover {
+  color:white
+}
+
+.news-item:hover::before {
+  bottom: 0;
+  height: 100%;
+}
+
+.swiper-horizontal > .swiper-pagination-progressbar, .swiper-pagination-progressbar.swiper-pagination-horizontal, .swiper-vertical > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite, .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite {
+  width: 100%;
+  height: 1.3px!important;
+  position: absolute!important;
+  top: 0px!important;
+}
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+background: #196FA8!important;
+}
+
+.completed_projects-slider .swiper-pagination {
+  font-size: 25px !important;
+}
+
+.swiper-pagination-total {
+  font-family: "TTAutonomous";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 41.6px */
+  text-transform: uppercase;
+  color:#2D2D2D;
+}
+
+@media (max-width: 992px) {
+  .swiper-pagination-total {
+    font-family: "TTAutonomous";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 41.6px */
+    text-transform: uppercase;
+    color:#2D2D2D;
+  }
+}
+
+@media (min-width: 992px) {
+  .swiper-pagination-total {
+    font-family: "TTAutonomous";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 41.6px */
+    text-transform: uppercase;
+    color:#2D2D2D;
+  }
+}
+
+@media (max-width: 992px) {
+  .swiper-pagination-current {
+    font-family: "TTAutonomous";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 166.4px */
+    text-transform: uppercase;
+    color:#2D2D2D;
+  }
+}
+
+@media (min-width: 992px) {
+  .swiper-pagination-current {
+    font-family: "TTAutonomous";
+    font-size: 128px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 166.4px */
+    text-transform: uppercase;
+    color:#2D2D2D;
+  }
+}
+
+.swiper-pagination {
+  position: relative !important;
+}
+
+.swiper-scrollbar-drag {
+  color:red !important;
+}
+
+.ymaps-2-1-79-map {
+  height: 40vh !important;
+}
+
+[class*="ymaps-2"][class*="-ground-pane"] {
+  filter: grayscale(1);
+}
+
+.ymaps-2-1-79-map-copyrights-promo,
+.ymaps-2-1-79-copyright .ymaps-2-1-79-copyright__wrap
+{
+  display: none;
+}
+
+.ymaps-2-1-79-svg-icon {
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.custom-placemark {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 2500;
+  cursor: pointer;
+  pointer-events: all;
+  left: 7px;
+}
+
+.features-block__slide {
+  h6 {
+    opacity: 0.3;
+    transition: ease-in 0.3s;
+  }
+  p {
+    opacity: 0;
+    transition: ease-in 0.3s;
+  }
+  &.swiper-slide-active {
+    h6 {
+      opacity: 1;
+    }
+    p {
+      opacity: 1;
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.features-block__slider {
+    overflow: visible;
+    margin-top: 0;
+    height: 16%;
+}
+
+
+.inner-image > div {
+  transition: 0.7s all ease;
+}
+
+

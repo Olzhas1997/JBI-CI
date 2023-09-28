@@ -1,0 +1,43 @@
+name: Frontend Next Public
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log Level'
+        required: true
+        default: 'Warning'
+      tags:
+        description: 'Test scenario tags'
+
+jobs:
+  frontend-next-public:
+
+    runs-on: Ubuntu-latest
+
+    env:
+      node-version: "19.7.0"
+
+    defaults:
+      run:
+        working-directory: ./next
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use node.js ${{ env.node-version }}
+      uses: actions/setup-node@v3
+      with:
+          node-version: ${{ env.node-version }}
+          cache: 'npm'
+          cache-dependency-path: './next/package-lock.json'
+    - name: Install Dependecies
+      run: npm install
+    - name: Check Installed Dependencies
+      run: npm list
+    - name: ESlint run
+      run: npm run lint --if-present
+          

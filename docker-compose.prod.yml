@@ -1,0 +1,77 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./:/var/www
+      - ./docker/nginx/prod/conf.d/:/etc/nginx/conf.d
+    ports:
+      - "8089:8089"
+    container_name: ${PROJECT_NAME}-nginx
+    depends_on:
+      - laravel
+      - cache
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: always
+  laravel:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ./laravel/:/var/www/laravel
+    working_dir: /var/www/laravel
+    container_name: ${PROJECT_NAME}-laravel
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: always
+  postgres:
+    container_name: ${PROJECT_NAME}-postgres
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 1111
+      POSTGRES_DB: sozdateli_db
+    ports:
+      - "5435:5432"
+    volumes:
+      - ./docker/db:/var/lib/postgresql/data
+    restart: always
+  front:
+    build:
+      context: .
+      dockerfile: docker/next/Dockerfile
+    volumes:
+      - ./next/:/var/www/next
+      - /next/node_modules
+    ports:
+      - 3026:3026
+    command: bash -c "npm i && npm run build && npm run start"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: always
+  admin:
+    build:
+      context: .
+      dockerfile: docker/next-admin/Dockerfile
+    volumes:
+      - ./next-admin/:/var/www/next-admin
+      - /next-admin/node_modules
+    ports:
+      - 3027:3027
+    command: bash -c "npm i && npm run build && npm run start"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: always
+  cache:
+    image: redis:6.2-alpine
+    restart: always
+    expose:
+      - 6379
+    command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    volumes:
+      - cache:/data
+volumes:
+  cache:
+    driver: local

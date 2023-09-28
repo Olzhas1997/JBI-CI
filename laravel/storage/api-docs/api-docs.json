@@ -1,0 +1,1894 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "JBI-3",
+        "contact": {
+            "email": "admin@mail.ru"
+        },
+        "version": "0.1"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8083/api/",
+            "description": "JBI-3"
+        }
+    ],
+    "paths": {
+        "/api/v1/admin/document-categories": {
+            "get": {
+                "tags": [
+                    "Admin/DocumentCategory"
+                ],
+                "summary": "Получение списка категорий документов",
+                "description": "Возвращает список категории документов",
+                "operationId": "7fce863f9380e9fe211de67936c466c7",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewsCategoryIndexResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Admin/DocumentCategory"
+                ],
+                "summary": "Добавление новой категории документов",
+                "operationId": "cb63605b5c3f774def7c86e1b2933ede",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NewsCategoryRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewsCategoryResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/admin/document-categories/{id}": {
+            "get": {
+                "tags": [
+                    "Admin/DocumentCategory"
+                ],
+                "summary": "Получение категории документов",
+                "operationId": "0608977d3714f108b6991b78424b0d80",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id категории",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewsCategory"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Admin/DocumentCategory"
+                ],
+                "summary": "Обновление категории документов",
+                "operationId": "b9f4f520e79976dfd771d549f0d0afff",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NewsCategoryRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewsCategoryResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Admin/DocumentCategory"
+                ],
+                "summary": "Удаление категории документов",
+                "operationId": "c9f2d382191083ea560bb29b30cd19e0",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeleteResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/admin/documents": {
+            "get": {
+                "tags": [
+                    "Admin/Document"
+                ],
+                "summary": "Получение списка документов",
+                "description": "Возвращает список документов",
+                "operationId": "dea53e3648acd7e589bd37568e1c5bd2",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentIndexResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Admin/Document"
+                ],
+                "summary": "Добавление нового документа",
+                "operationId": "ee783825ae32eeb325036ac2c5452610",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DocumentRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/admin/documents/{id}": {
+            "get": {
+                "tags": [
+                    "Admin/Document"
+                ],
+                "summary": "Получение группы документов",
+                "operationId": "26adf7a462fa4a88bb2bbd552d4c036d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id документа",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Admin/Document"
+                ],
+                "summary": "Обновление группы документов",
+                "operationId": "8342e85aa5a6aa29d39f4f30b85293b0",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DocumentRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Admin/Document"
+                ],
+                "summary": "Удаление документа",
+                "operationId": "9d1f8b8614877e52e1d97f90a3699d11",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeleteResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/admin/document-groups": {
+            "get": {
+                "tags": [
+                    "Admin/DocumentGroup"
+                ],
+                "summary": "Получение списка групп документов",
+                "description": "Возвращает список групп документов",
+                "operationId": "ffa1d2124b0ac4585912fb08db68455d",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewsCategoryIndexResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Admin/DocumentGroup"
+                ],
+                "summary": "Добавление новой группы документов",
+                "operationId": "0b48cb8f5222838cd10c05989a64e13e",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NewsCategoryRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewsCategoryResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/admin/document-groups/{id}": {
+            "get": {
+                "tags": [
+                    "Admin/DocumentGroup"
+                ],
+                "summary": "Получение группы документов",
+                "operationId": "fb26c2b0ec1893f269ee043442e48e28",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id группы",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewsCategory"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Admin/DocumentGroup"
+                ],
+                "summary": "Обновление группы документов",
+                "operationId": "dc23d4949512bcd8d57f269c48c1a266",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NewsCategoryRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewsCategoryResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Admin/DocumentGroup"
+                ],
+                "summary": "Удаление группы документов",
+                "operationId": "5064df4bb58cef38d253cd582a80f164",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeleteResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/admin/news-categories": {
+            "get": {
+                "tags": [
+                    "Admin/NewsCategory"
+                ],
+                "summary": "Получение списка категорий новостей",
+                "description": "Возвращает список категорий новостей",
+                "operationId": "945b638ad02f2245aa582eddf9ee6df2",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewsCategoryIndexResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Admin/NewsCategory"
+                ],
+                "summary": "Добавление новой категории новости",
+                "operationId": "768ad551854f39c1a57e8ffdea4b1e51",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NewsCategoryRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewsCategoryResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/admin/news-categories/{id}": {
+            "get": {
+                "tags": [
+                    "Admin/NewsCategory"
+                ],
+                "summary": "Получение категории новости",
+                "operationId": "dccf6f9aacc36ac163d985cfb50e0b83",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id категории",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewsCategory"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Admin/NewsCategory"
+                ],
+                "summary": "Обновление категории новости",
+                "operationId": "47e9052f43a20c678a1f07215cf208c9",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NewsCategoryRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewsCategoryResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Admin/NewsCategory"
+                ],
+                "summary": "Удаление категории новости",
+                "operationId": "b0678a16e9d1bf54ddac5ae0a14d2600",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewsCategoryDeleteResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/admin/news/": {
+            "get": {
+                "tags": [
+                    "Admin/News"
+                ],
+                "summary": "Получение списка новостей",
+                "description": "Возвращает список новостей",
+                "operationId": "6130a74ee65a41114154cad979bbcab6",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewsResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Admin/News"
+                ],
+                "summary": "Добавление новой новости",
+                "operationId": "277b734c51332ad4e1a5130ee7b0b249",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateNewsRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewsResourceOne"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/admin/news/{id}": {
+            "get": {
+                "tags": [
+                    "Admin/News"
+                ],
+                "summary": "Получение новости",
+                "operationId": "904baa3704e71fc5901dd6587ee9233d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id новости",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewsResourceOne"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/admin/news/${id}": {
+            "put": {
+                "tags": [
+                    "Admin/News"
+                ],
+                "summary": "Обновление данных новости",
+                "operationId": "550f0b9476fe3b98e94306538af45fda",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id новости",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateNewsRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewsResourceOne"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Admin/News"
+                ],
+                "summary": "Удаление новости",
+                "operationId": "4150275cf8425f436965e0b237fe50e8",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id новости",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewsResourceOne"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/admin/pages": {
+            "get": {
+                "tags": [
+                    "Admin/Page"
+                ],
+                "summary": "Получение списка pages",
+                "description": "Возвращает список pages",
+                "operationId": "977821af812ed86301b884c59f53c91a",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PageIndexResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Admin/Page"
+                ],
+                "summary": "Добавление page",
+                "operationId": "e857b4c10e037dd70d048fe4818bd99f",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PageRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PageResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/admin/pages/{id}": {
+            "get": {
+                "tags": [
+                    "Admin/Page"
+                ],
+                "summary": "Получение page",
+                "operationId": "9c1b97d511b29ab537cf8d49137a6771",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id page",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PageResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Admin/Page"
+                ],
+                "summary": "Обновление page",
+                "operationId": "83e4692d10a7fec67ef08f0abfec5088",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PageRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PageResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Admin/Page"
+                ],
+                "summary": "Удаление page",
+                "operationId": "f48aea1f49c8a6b5a60f949b65cf85e0",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeleteResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/public/file": {
+            "post": {
+                "tags": [
+                    "Public/File"
+                ],
+                "summary": "Получение file",
+                "description": "Возвращает file",
+                "operationId": "d51caa1ad9425142bf99ec6641a78f6d",
+                "requestBody": {
+                    "description": "тело запроса",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "path": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DownloadFileResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/public/document-categories": {
+            "get": {
+                "tags": [
+                    "Public/DocumentCategory"
+                ],
+                "summary": "Получение списка категорий документов",
+                "description": "Возвращает список категории документов",
+                "operationId": "f4aa37df6aa52517c651f4fd5815dccc",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewsCategoryIndexResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/public/documents": {
+            "get": {
+                "tags": [
+                    "Public/Document"
+                ],
+                "summary": "Получение списка документов",
+                "description": "Возвращает список документов",
+                "operationId": "8ac24c5102a18df38bf8dc9646c696dd",
+                "parameters": [
+                    {
+                        "name": "f[category_id]",
+                        "in": "query",
+                        "description": "id категории документа",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "all",
+                        "in": "query",
+                        "description": "вывести без пагинации",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentWithGroupResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/public/documents/{id}": {
+            "get": {
+                "tags": [
+                    "Public/Document"
+                ],
+                "summary": "Получение группы документов",
+                "operationId": "895fdd75b823f9cf4dfa00ab3b9e0e85",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id документа",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/public/document-groups": {
+            "get": {
+                "tags": [
+                    "Public/DocumentGroup"
+                ],
+                "summary": "Получение списка групп документов",
+                "description": "Возвращает список групп документов",
+                "operationId": "bfa9f77e8ef4e6fc2042fcd3b5744e46",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewsCategoryIndexResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/public/news-categories": {
+            "get": {
+                "tags": [
+                    "Public/NewsCategory"
+                ],
+                "summary": "Получение списка категорий новостей",
+                "description": "Возвращает список категорий новостей",
+                "operationId": "bc990c29bab123f8898292123a2e6650",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewsCategoryIndexResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/public/news?page=1&f[category_id][]=1&f[category_id][]=2": {
+            "get": {
+                "tags": [
+                    "Public/News"
+                ],
+                "summary": "Получения новостей",
+                "operationId": "f21b83b0e5146938ba64868bb9aad672",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewsResourcePublic"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/public/news/{id}": {
+            "get": {
+                "tags": [
+                    "Public/News"
+                ],
+                "summary": "Получение Новости",
+                "operationId": "f8f8599522c6c0e4bc9dc6189d7133b8",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id news",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewsResourceDetail"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/public/pages": {
+            "get": {
+                "tags": [
+                    "Public/Page"
+                ],
+                "summary": "Получение списка pages",
+                "description": "Возвращает список pages",
+                "operationId": "7b18806ce85f787a0b7429bc63ead6b6",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PageIndexResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/public/pages/{id}": {
+            "get": {
+                "tags": [
+                    "Public/Page"
+                ],
+                "summary": "Получение page",
+                "operationId": "02341430fd19be6ac40edc047fddf84d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id page",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PageResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Document": {
+                "title": "Document",
+                "description": "Модель документа",
+                "properties": {
+                    "id": {
+                        "title": "id",
+                        "description": "id",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "title": {
+                        "title": "title",
+                        "description": "Название документа",
+                        "type": "string",
+                        "example": "JBI"
+                    },
+                    "category_id": {
+                        "title": "category_id",
+                        "description": "category_id",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "group_id": {
+                        "title": "group_id",
+                        "description": "group_id",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "is_active": {
+                        "title": "is_active",
+                        "description": "Активность файла",
+                        "type": "boolean",
+                        "example": true
+                    },
+                    "date": {
+                        "title": "date",
+                        "description": "Дата файла",
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2023-09-12"
+                    },
+                    "file": {
+                        "title": "file",
+                        "description": "file",
+                        "type": "string",
+                        "example": "[]"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "Document"
+                }
+            },
+            "News": {
+                "title": "News",
+                "description": "Модель новости",
+                "properties": {
+                    "id": {
+                        "title": "id",
+                        "description": "id",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "title": {
+                        "title": "title",
+                        "description": "Название новости",
+                        "type": "string",
+                        "example": "JBI"
+                    },
+                    "type": {
+                        "title": "type",
+                        "description": "Тип новости",
+                        "type": "string",
+                        "example": "Тип новости"
+                    },
+                    "category_id": {
+                        "title": "category_id",
+                        "description": "category_id",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "is_active": {
+                        "title": "is_active",
+                        "description": "Активность новости",
+                        "type": "boolean",
+                        "example": true
+                    },
+                    "slug": {
+                        "title": "slug",
+                        "description": "Преобразованное название для ссылки",
+                        "type": "string",
+                        "example": "test-news"
+                    },
+                    "date": {
+                        "title": "date",
+                        "description": "Дата новости",
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2023-09-12"
+                    },
+                    "preview_img": {
+                        "title": "preview_img",
+                        "description": "Превью картинка",
+                        "type": "string",
+                        "example": "[]"
+                    },
+                    "detail_img": {
+                        "title": "detail_img",
+                        "description": "Детальная картинка",
+                        "type": "string",
+                        "example": "[]"
+                    },
+                    "content": {
+                        "title": "content",
+                        "description": "Контент",
+                        "type": "string",
+                        "example": "[]"
+                    },
+                    "preview_text": {
+                        "title": "preview_text",
+                        "description": "Превью текст",
+                        "type": "string"
+                    },
+                    "detail_text": {
+                        "title": "detail_text",
+                        "description": "Детальный текст",
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "News"
+                }
+            },
+            "NewsCategory": {
+                "title": "NewsCategory",
+                "description": "Модель категорий новостей",
+                "properties": {
+                    "id": {
+                        "title": "id",
+                        "description": "id",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "title": {
+                        "title": "title",
+                        "description": "Название категории",
+                        "type": "string",
+                        "example": "интересное"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "NewsCategory"
+                }
+            },
+            "NewsCreate": {
+                "title": "NewsCreate",
+                "description": "Модель новости",
+                "properties": {
+                    "id": {
+                        "title": "id",
+                        "description": "id",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "title": {
+                        "title": "title",
+                        "description": "Название новости",
+                        "type": "string",
+                        "example": "Создатели заправляют"
+                    },
+                    "is_active": {
+                        "title": "is_active",
+                        "description": "Активность новости",
+                        "type": "boolean",
+                        "example": true
+                    },
+                    "slug": {
+                        "title": "slug",
+                        "description": "Преобразованное название для ссылки",
+                        "type": "string",
+                        "example": "sozdateli-zapravlyayut"
+                    },
+                    "date": {
+                        "title": "date",
+                        "description": "Дата новости",
+                        "type": "string",
+                        "format": "date-time",
+                        "example": null
+                    },
+                    "preview_img": {
+                        "title": "preview_img",
+                        "description": "Превью картинка",
+                        "type": "string",
+                        "example": null
+                    },
+                    "detail_img": {
+                        "title": "detail_img",
+                        "description": "Детальная картинка",
+                        "type": "string",
+                        "example": null
+                    },
+                    "content": {
+                        "title": "content",
+                        "description": "Контент",
+                        "type": "string",
+                        "example": null
+                    },
+                    "preview_text": {
+                        "title": "preview_text",
+                        "description": "Превью текст",
+                        "type": "string",
+                        "example": null
+                    },
+                    "detail_text": {
+                        "title": "detail_text",
+                        "description": "Детальный текст",
+                        "type": "string",
+                        "example": null
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "NewsCreate"
+                }
+            },
+            "Page": {
+                "title": "Page",
+                "description": "Модель page",
+                "properties": {
+                    "id": {
+                        "title": "id",
+                        "description": "id",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "title": {
+                        "title": "title",
+                        "description": "title",
+                        "type": "string"
+                    },
+                    "slug": {
+                        "title": "slug",
+                        "description": "slug",
+                        "type": "string"
+                    },
+                    "is_active": {
+                        "title": "is_active",
+                        "description": "is_active",
+                        "type": "boolean"
+                    },
+                    "description": {
+                        "title": "description",
+                        "description": "description",
+                        "type": "string"
+                    },
+                    "content": {
+                        "title": "content",
+                        "description": "content",
+                        "type": "string",
+                        "example": "json"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "Page"
+                }
+            },
+            "DocumentRequest": {
+                "title": "DocumentRequest",
+                "description": "Тело запроса",
+                "required": [
+                    "title",
+                    "is_active"
+                ],
+                "properties": {
+                    "title": {
+                        "title": "title",
+                        "description": "Название документа",
+                        "type": "string",
+                        "example": "JBI"
+                    },
+                    "category_id": {
+                        "title": "category_id",
+                        "description": "category_id",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "group_id": {
+                        "title": "group_id",
+                        "description": "group_id",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "is_active": {
+                        "title": "is_active",
+                        "description": "Активность файла",
+                        "type": "boolean",
+                        "example": true
+                    },
+                    "date": {
+                        "title": "date",
+                        "description": "Дата файла",
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2023-09-12"
+                    },
+                    "file": {
+                        "title": "file",
+                        "description": "file",
+                        "type": "string",
+                        "example": "[]"
+                    }
+                },
+                "type": "object"
+            },
+            "CreateNewsRequest": {
+                "title": "CreateNewsRequest",
+                "description": "Тело запроса",
+                "required": [
+                    "title",
+                    "is_active"
+                ],
+                "properties": {
+                    "title": {
+                        "title": "title",
+                        "description": "Название новости",
+                        "type": "string",
+                        "example": "JBI-3"
+                    },
+                    "is_active": {
+                        "title": "is_active",
+                        "description": "Активность новости",
+                        "type": "boolean",
+                        "example": true
+                    }
+                },
+                "type": "object"
+            },
+            "NewsCategoryRequest": {
+                "title": "NewsCategoryRequest",
+                "description": "Тело запроса",
+                "required": [
+                    "title"
+                ],
+                "properties": {
+                    "title": {
+                        "title": "title",
+                        "description": "Название категории",
+                        "type": "string",
+                        "example": "Акции"
+                    }
+                },
+                "type": "object"
+            },
+            "UpdateNewsRequest": {
+                "title": "UpdateNewsRequest",
+                "description": "Тело запроса",
+                "required": [
+                    "title",
+                    "is_active"
+                ],
+                "properties": {
+                    "title": {
+                        "title": "title",
+                        "description": "Название новости",
+                        "type": "string",
+                        "example": "JBI-3"
+                    },
+                    "type": {
+                        "title": "type",
+                        "description": "Тип новости",
+                        "type": "string",
+                        "example": "маленькая|большая"
+                    },
+                    "is_active": {
+                        "title": "is_active",
+                        "description": "Активность новости",
+                        "type": "boolean",
+                        "example": true
+                    },
+                    "date": {
+                        "title": "date",
+                        "description": "Дата новости",
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2023-09-12"
+                    },
+                    "preview_img": {
+                        "title": "preview_img",
+                        "description": "Превью картинка",
+                        "type": "string",
+                        "example": "[]"
+                    },
+                    "detail_img": {
+                        "title": "detail_img",
+                        "description": "Детальная картинка",
+                        "type": "string",
+                        "example": "[]"
+                    },
+                    "content": {
+                        "title": "content",
+                        "description": "Контент",
+                        "type": "string",
+                        "example": "[]"
+                    },
+                    "preview_text": {
+                        "title": "preview_text",
+                        "description": "Превью текст",
+                        "type": "string",
+                        "example": "[]"
+                    },
+                    "detail_text": {
+                        "title": "detail_text",
+                        "description": "Детальный текст",
+                        "type": "string",
+                        "example": "[]"
+                    }
+                },
+                "type": "object"
+            },
+            "PageRequest": {
+                "title": "PageRequest",
+                "description": "Тело запроса",
+                "required": [
+                    "title"
+                ],
+                "properties": {
+                    "title": {
+                        "title": "title",
+                        "description": "title",
+                        "type": "string"
+                    },
+                    "slug": {
+                        "title": "slug",
+                        "description": "slug",
+                        "type": "string"
+                    },
+                    "is_active": {
+                        "title": "is_active",
+                        "description": "is_active",
+                        "type": "boolean"
+                    },
+                    "description": {
+                        "title": "description",
+                        "description": "description",
+                        "type": "string",
+                        "example": "text"
+                    },
+                    "content": {
+                        "title": "content",
+                        "description": "content",
+                        "type": "string",
+                        "example": "json"
+                    }
+                },
+                "type": "object"
+            },
+            "DeleteAnswerResource": {
+                "title": "DeleteAnswerResource",
+                "description": "DeleteAnswerResource",
+                "properties": {
+                    "success": {
+                        "title": "success",
+                        "description": "success",
+                        "type": "integer",
+                        "format": "bool",
+                        "example": true
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "DeleteAnswerResource"
+                }
+            },
+            "DeleteResource": {
+                "title": "DeleteResource",
+                "description": "Delete Resource",
+                "properties": {
+                    "data": {
+                        "$ref": "#/components/schemas/DeleteAnswerResource"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "DeleteResource"
+                }
+            },
+            "DocumentIndexResource": {
+                "title": "DocumentIndexResource",
+                "description": "DocumentIndex resource",
+                "properties": {
+                    "data": {
+                        "title": "Data",
+                        "description": "data",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Document"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "DocumentIndexResource"
+                }
+            },
+            "DocumentResource": {
+                "title": "DocumentResource",
+                "description": "Document resource",
+                "properties": {
+                    "data": {
+                        "$ref": "#/components/schemas/Document"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "DocumentResource"
+                }
+            },
+            "DocumentWithGroupResource": {
+                "title": "DocumentWithGroupResource",
+                "description": "DocumentWithGroup resource",
+                "properties": {
+                    "group1": {
+                        "title": "group1",
+                        "description": "group1",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Document"
+                        }
+                    },
+                    "group2": {
+                        "title": "group2",
+                        "description": "group2",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Document"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "DocumentWithGroupResource"
+                }
+            },
+            "DownloadFileResource": {
+                "title": "DownloadFileResource",
+                "description": "DownloadFileResource",
+                "properties": {
+                    "file": {
+                        "title": "file",
+                        "description": "file",
+                        "format": "binary"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "DownloadFileResource"
+                }
+            },
+            "NewsResource": {
+                "title": "NewsResource",
+                "description": "News resource",
+                "properties": {
+                    "none_data": {
+                        "title": "Data",
+                        "description": "data",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/News"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "NewsResource"
+                }
+            },
+            "NewsResourceCreate": {
+                "title": "NewsResourceCreate",
+                "description": "News resource",
+                "properties": {
+                    "data": {
+                        "$ref": "#/components/schemas/NewsCreate"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "NewsResourceCreate"
+                }
+            },
+            "NewsResourceDetail": {
+                "title": "NewsResourceDetail",
+                "description": "News resource",
+                "properties": {
+                    "item": {
+                        "$ref": "#/components/schemas/News"
+                    },
+                    "ourItems": {
+                        "$ref": "#/components/schemas/NewsResourcePublic"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "NewsResourceDetail"
+                }
+            },
+            "NewsResourceOne": {
+                "title": "NewsResourceOne",
+                "description": "News resource",
+                "properties": {
+                    "data": {
+                        "$ref": "#/components/schemas/News"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "NewsResourceOne"
+                }
+            },
+            "NewsResourcePublic": {
+                "title": "NewsResourcePublic",
+                "description": "News resource",
+                "properties": {
+                    "current_page": {
+                        "title": "current_page",
+                        "description": "Текущая страница",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "data": {
+                        "title": "data",
+                        "description": "data",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/News"
+                        }
+                    },
+                    "last_page": {
+                        "title": "last_page",
+                        "description": "Номер последней страницы",
+                        "type": "integer",
+                        "example": 4
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "NewsResourcePublic"
+                }
+            },
+            "NewsCategoryDeleteAnswerResource": {
+                "title": "NewsCategoryItemResource",
+                "description": "NewsCategory",
+                "properties": {
+                    "success": {
+                        "title": "success",
+                        "description": "success",
+                        "type": "integer",
+                        "format": "bool",
+                        "example": true
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "NewsCategory"
+                }
+            },
+            "NewsCategoryDeleteResource": {
+                "title": "NewsCategoryResource",
+                "description": "News Category Resource",
+                "properties": {
+                    "data": {
+                        "$ref": "#/components/schemas/NewsCategoryDeleteAnswerResource"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "NewsCategoryResource"
+                }
+            },
+            "NewsCategoryIndexResource": {
+                "title": "NewsCategoryIndexResource",
+                "description": "NewsCategoryIndexResource",
+                "properties": {
+                    "data": {
+                        "title": "Data",
+                        "description": "data",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/NewsCategory"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "NewsCategoryIndexResource"
+                }
+            },
+            "NewsCategoryItemResource": {
+                "title": "NewsCategoryItemResource",
+                "description": "NewsCategory",
+                "properties": {
+                    "id": {
+                        "title": "id",
+                        "description": "id",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "title": {
+                        "title": "title",
+                        "description": "Название категории новости",
+                        "type": "string",
+                        "example": "интересное"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "NewsCategory"
+                }
+            },
+            "NewsCategoryResource": {
+                "title": "NewsCategoryResource",
+                "description": "News Category Resource",
+                "properties": {
+                    "data": {
+                        "title": "Data",
+                        "description": "data"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "NewsCategoryResource"
+                }
+            },
+            "PageIndexResource": {
+                "title": "PageIndexResource",
+                "description": "PageIndex resource",
+                "properties": {
+                    "data": {
+                        "title": "Data",
+                        "description": "data",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Page"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "PageIndexResource"
+                }
+            },
+            "PageResource": {
+                "title": "PageResource",
+                "description": "Page resource",
+                "properties": {
+                    "data": {
+                        "$ref": "#/components/schemas/Page"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "PageResource"
+                }
+            }
+        }
+    }
+}

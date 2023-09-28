@@ -1,0 +1,217 @@
+@import 'custom.scss';
+@import '../node_modules/swiper/swiper.min';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'swiper/css/effect-fade';
+
+@layer base {
+  @font-face {
+    font-display: swap;
+    font-family: "CodecCold";
+    src: url("./fonts/CodecCold-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+  }
+  @font-face {
+    font-display: swap;
+    font-family: "CodecCold";
+    src: url("./fonts/CodecCold-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 700;
+  }
+  @font-face {
+    font-display: swap;
+    font-family: "TTAutonomous";
+    src: url("./fonts/TTAutonomousTrl-Light.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 300;
+  }
+  @font-face {
+    font-display: swap;
+    font-family: "TTAutonomous";
+    src: url("./fonts/TTAutonomousTrl-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+  }
+  @font-face {
+    font-display: swap;
+    font-family: "TTAutonomous";
+    src: url("./fonts/TTAutonomousTrl-Medium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 500;
+  }
+  @font-face {
+    font-display: swap;
+    font-family: "ProximaNova";
+    src: url("./fonts/ProximaNova-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+  }
+  @font-face {
+    font-display: swap;
+    font-family: "ProximaNova";
+    src: url("./fonts/ProximaNova-Semibold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 600;
+  }
+  @font-face {
+    font-display: swap;
+    font-family: "GetVoIP";
+    src: url("./fonts/GetVoIPGrotesque.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+  }
+  @font-face {
+    font-display: swap;
+    font-family: "Inter";
+    src: url("./fonts/Inter-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+  }
+  @font-face {
+    font-display: swap;
+    font-family: "Inter";
+    src: url("./fonts/Inter-Medium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  html {
+    @apply font-codec bg-white
+  }
+
+  h1 {
+    @apply font-tt font-light text-12xl tracking-h1 uppercase
+  }
+
+  h2 {
+    @apply font-tt font-normal text-11xl tracking-normal uppercase
+  }
+
+  h3 {
+    @apply font-tt font-normal text-lg md:text-4xl xl:text-6xl 2xl:text-9xl 3xl:text-10xl tracking-h3 uppercase
+  }
+
+  h4 {
+    @apply font-tt font-normal text-sm md:text-2xl xl:text-4xl 2xl:text-7xl 3xl:text-9xl tracking-h4 uppercase
+  }
+
+  h5 {
+    @apply font-tt font-medium text-lg md:text-2xl xl:text-5xl 3xl:text-8xl tracking-normal uppercase
+  }
+
+  h6 {
+    @apply font-tt font-medium text-sm md:text-lg lg:text-2xl xl:text-4xl 2xl:text-5xl 3xl:text-7xl tracking-normal uppercase
+  }
+
+  .h7 {
+    @apply font-tt font-medium text-xl xl:text-5xl 3xl:text-6xl tracking-normal uppercase
+  }
+
+  .h8 {
+    @apply font-tt font-medium xxs:text-base md:text-xl lg:text-2xl 2xl:text-5xl tracking-normal uppercase
+  }
+
+  .h8-light {
+    @apply font-tt font-light text-base md:text-lg 3xl:text-5xl tracking-normal uppercase
+  }
+
+  .h9 {
+    @apply font-tt font-medium text-4xl tracking-normal uppercase
+  }
+
+  .h10-medium {
+    @apply font-tt font-medium text-xxs lg:text-sm xl:text-2xl 3xl:text-3xl tracking-normal uppercase
+  }
+
+  .h10 {
+    @apply font-tt font-normal text-xs lg:text-sm xl:text-2xl 3xl:text-3xl tracking-normal uppercase
+  }
+
+  .h11 {
+    @apply font-tt font-normal xxs:text-xxs 2xl:text-xl tracking-normal uppercase
+  }
+
+  .h12-medium {
+    @apply font-tt font-medium text-lg tracking-normal uppercase
+  }
+
+  .h12 {
+    @apply font-tt font-normal text-lg tracking-normal uppercase
+  }
+
+  .h13 {
+    @apply font-tt font-medium text-xs 3xl:text-base tracking-h13 uppercase
+  }
+
+  .h14 {
+    @apply font-tt font-normal text-xs 3xl:text-sm tracking-normal uppercase
+  }
+}
+
+@layer components {
+  .t1 {
+    @apply font-codec text-2xl font-bold uppercase
+  }
+
+  .t2-bold {
+    @apply font-codec text-lg font-bold uppercase
+  }
+
+  .t2 {
+    @apply font-codec text-xxs sm:text-sm 3xl:text-lg font-normal
+  }
+
+  .t3-bold {
+    @apply font-codec text-base font-bold uppercase
+  }
+
+  .t3 {
+    @apply font-codec text-xxs xl:text-sm 3xl:text-base font-normal
+  }
+
+  .t4 {
+    @apply font-codec text-sm font-normal uppercase
+  }
+
+  .t5 {
+    @apply font-codec text-sm-caps font-bold uppercase
+  }
+
+  .t6 {
+    @apply font-codec text-xs font-normal
+  }
+
+  .t7 {
+    @apply font-codec text-xxs font-normal
+  }
+
+  .title-gutter {
+    @apply mb-6 xl:mb-16
+  }
+  .section-gutter {
+    @apply my-10 xl:my-20 3xl:my-24
+  }
+}
+
+* { -webkit-tap-highlight-color: rgba(0,0,0,0); }
+
+//цвет ползунка
+::-webkit-scrollbar-track {
+  background-color: #F2F2F2; /*Цвет скролла*/
+}
+//.apart-detail-scroll {
+//  ::-webkit-scrollbar-track {
+//    background-color: #FFFFFF; /*Цвет скролла*/
+//  }
+//}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px; /*Закругление ползунка*/
+  background-color: #000000; /*Цвет ползунка*/
+}
+::-webkit-scrollbar {
+  width: 2px;  /*Толщина скролла*/
+  height: 2px;
+}
+

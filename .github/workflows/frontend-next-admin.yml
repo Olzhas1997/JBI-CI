@@ -1,0 +1,42 @@
+name: Frontend Next Admin
+
+on:
+  #push:
+    #branches: [ "task_CI" ]
+  #pull_request:
+    #branches: [ "task_CI" ]
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log Level'
+        required: true
+        default: 'Warning'
+      tags:
+        description: 'Test scenatio tags'
+
+jobs:
+  frontend-next-admin:
+
+    runs-on: Ubuntu-latest
+
+    env:
+      node-version: "19.7.0"
+
+    defaults:
+      run:
+        working-directory: ./next-admin
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use node.js ${{ env.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ env.node-version }}
+        cache: 'npm'
+        cache-dependency-path: './next-admin/package-lock.json'
+    - name: Install dependencies
+      run: npm install
+    - name: Check installed dependencies
+      run: npm list
+    - name: ESLint run
+      run: npm run lint --if-present

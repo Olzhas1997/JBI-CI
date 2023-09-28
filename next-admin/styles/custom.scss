@@ -1,0 +1,84 @@
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: all 500ms;
+  background-color: rgba(#F2F2F2, 0.5) !important;
+}
+
+.ReactModal__Overlay--after-open{
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+  opacity: 0;
+}
+.switcher-class {
+  @apply mr-2 mt-[0.3rem] h-3.5 w-8 appearance-none rounded-[0.4375rem] bg-neutral-300 before:pointer-events-none before:absolute before:h-3.5 before:w-3.5 before:rounded-full before:bg-transparent before:content-[''] after:absolute after:z-[2] after:-mt-[0.1875rem] after:h-5 after:w-5 after:rounded-full after:border-none after:bg-neutral-100 after:transition-[background-color_0.2s,transform_0.2s] after:content-[''] checked:bg-orange checked:after:absolute checked:after:z-[2] checked:after:-mt-[3px] checked:after:ml-[1.0625rem] checked:after:h-5 checked:after:w-5 checked:after:rounded-full checked:after:border-none checked:after:bg-blue checked:after:shadow-[0_3px_1px_-2px_rgba(0,0,0,0.2),_0_2px_2px_0_rgba(0,0,0,0.14),_0_1px_5px_0_rgba(0,0,0,0.12)] checked:after:transition-[background-color_0.2s,transform_0.2s] checked:after:content-[''] hover:cursor-pointer focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[3px_-1px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-5 focus:after:w-5 focus:after:rounded-full focus:after:content-[''] checked:focus:border-blue checked:focus:bg-orange checked:focus:before:ml-[1.0625rem] checked:focus:before:scale-100 checked:focus:before:shadow-[3px_-1px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] dark:bg-neutral-600 dark:after:bg-neutral-400 dark:checked:bg-orange dark:checked:after:bg-orange dark:focus:before:shadow-[3px_-1px_0px_13px_rgba(255,255,255,0.4)]
+}
+.input-class {
+  @apply w-full py-2 px-6 mb-2 border-orange border-[1px] rounded-[5px] focus:outline-none focus:border-blue focus:ring-1 focus:ring-blue
+}
+.input-error-class {
+  @apply w-full py-2 px-6 mb-2 border-red border-[1px] rounded-[5px] focus:outline-none focus:border-red focus:ring-1 focus:ring-red
+}
+.btn-black {
+  @apply cursor-pointer transition-all duration-200 py-2 px-6 rounded-[10px] border-[1px] border-white hover:bg-white hover:text-black hover:border-black bg-black text-white
+}
+
+.btn-blue {
+  @apply w-fit cursor-pointer transition-all duration-200 py-2 px-6 rounded-[10px] border-[1px] border-white hover:bg-black hover:text-white hover:border-black bg-blue text-white
+}
+
+
+
+.visual-editor__plan {
+  overflow: hidden;
+  text-align: center;
+}
+.visual-editor__img-cont {
+  position: relative;
+  display: inline-block;
+  background-image: linear-gradient(
+                  45deg
+          , #eee 25%, transparent 25%), linear-gradient(
+                  -45deg
+          , #eee 25%, transparent 25%), linear-gradient(
+                  45deg
+          , transparent 75%, #eee 75%), linear-gradient(
+                  -45deg
+          , transparent 75%, #eee 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  transform: scale(var(--scale, 1)) translate(var(--x, 0%), var(--y, 0%));
+}
+.visual-edotor__img {
+  display: block;
+  aspect-ratio: var(--width)/var(--height);
+  height: 62vh;
+  max-width: 100%;
+}
+.visual-edotor__svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+}
+.visual-edotor__contour {
+  opacity: 0.5;
+  transition: 0s;
+  fill: #193248;
+  stroke: red;
+  stroke-width: 2px;
+  pointer-events: none;
+  &._disabled {
+    fill: #4caf50;
+    stroke: red;
+    pointer-events: none;
+  }
+}
+.visual-edotor__circle {
+  fill: none;
+  stroke: #ffc107;
+  stroke-width: 2px;
+}
