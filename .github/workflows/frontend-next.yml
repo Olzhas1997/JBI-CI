@@ -1,0 +1,22 @@
+name: Frontend Next CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  frontend-requirements-install:
+
+    runs-on: Ubuntu-latest
+    env:
+      node-version: "19.7.0"
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use node.js ${{ env.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ env.node-version }}
+        cache: 'npm'
