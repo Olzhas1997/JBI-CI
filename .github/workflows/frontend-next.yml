@@ -1,4 +1,4 @@
-ioname: Frontend Next CI
+name: Frontend Next CI
 
 on:
   push:
