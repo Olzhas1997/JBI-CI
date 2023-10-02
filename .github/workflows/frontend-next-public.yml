@@ -36,6 +36,8 @@ jobs:
           cache-dependency-path: './next/package-lock.json'
     - name: Install Dependecies
       run: npm install
+    - name: Node.js version
+      run: node -v
     - name: Check Installed Dependencies
       run: npm list
     - name: ESlint run
