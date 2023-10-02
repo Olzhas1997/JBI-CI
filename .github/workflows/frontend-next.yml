@@ -44,13 +44,14 @@ jobs:
 
     defaults:
       run:
-        working-directory: /next-admin
+        working-directory: ./next-admin
 
     steps:
       - name: Install Dependencies
         shell: bash -l {0}
         run: |
           nvm use ${{ env.node-version }}
+          ls
 
       - name: Check installed dependencies
         shell: bash -l {0}
