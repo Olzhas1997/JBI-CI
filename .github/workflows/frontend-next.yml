@@ -38,13 +38,13 @@ jobs:
         node -v
         npm -v
 
-  frontend-next-admin:
+  frontend-next-public:
     needs: frontend-node-install
     runs-on: Ubuntu-latest
 
     defaults:
       run:
-        working-directory: next-admin
+        working-directory: ./next
 
     steps:
       - name: Install Dependencies
