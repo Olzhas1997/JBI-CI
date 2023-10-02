@@ -31,8 +31,8 @@ jobs:
       shell: bash -l {0}
       run: |
         nvm install ${{ env.node-version }}
-        nvm use ${{ env.node-version }}
     - name: Check Node.js version and NPM
+      shell: bash -l {0}
       run: |
         node -v
         npm -v
