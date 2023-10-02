@@ -12,12 +12,12 @@ on:
         required: true
         default: 'Warning'
 
+env:
+  node-version: "19.7.0"
+
 jobs:
   frontend-node-install:
-
     runs-on: Ubuntu-latest
-    env:
-      node-version: "19.7.0"
 
     steps:
     - uses: actions/checkout@v3
@@ -37,6 +37,27 @@ jobs:
         nvm use ${{ env.node-version }}
         node -v
         npm -v
+
+  frontend-next-admin:
+    runs-on: Ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./next-admin
+
+    steps:
+      - name: Install Dependencies
+        shell: bash -l {0}
+        run: |
+          nvm use ${{ env.node-version }}
+          npm install
+      - name: Check installed dependencies
+        shell: bash -l {0}
+        run: |
+          node -v
+          npm -v
+          npm list
+    
     #Install node.js ${{ env.node-version }}
       #run: sudo apt install nodejs
     #- name: Use node.js ${{ env.node-version }}
