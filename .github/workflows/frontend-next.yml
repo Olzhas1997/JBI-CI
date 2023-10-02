@@ -1,4 +1,4 @@
-name: Frontend Next CI
+ioname: Frontend Next CI
 
 on:
   push:
@@ -28,7 +28,7 @@ jobs:
           sudo apt-get install build-essential libssl-dev
           curl -o- https://raw.githubusercontent.com/creationix/nvm/v${{ env.nvm-version }}/install.sh | bash
           nvm use system
-          nvm remote-ls
+          nvm -v
     #Install node.js ${{ env.node-version }}
       #run: sudo apt install nodejs
     - name: Use node.js ${{ env.node-version }}
