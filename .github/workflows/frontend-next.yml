@@ -27,9 +27,9 @@ jobs:
         source ~/.profile
         nvm -v
       shell: bash -l {0}
-    - name: Check remote version Node.js
+    - name: Install Node.js ${{ env.node-version }}
       shell: bash -l {0}
-      run: nvm ls-remote
+      run: nvm install ${{ env.node-version }}
     #Install node.js ${{ env.node-version }}
       #run: sudo apt install nodejs
     #- name: Use node.js ${{ env.node-version }}
