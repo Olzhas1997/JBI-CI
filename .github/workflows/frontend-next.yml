@@ -30,6 +30,10 @@ jobs:
     - name: Install Node.js ${{ env.node-version }}
       shell: bash -l {0}
       run: nvm install ${{ env.node-version }}
+    - name: Check Node.js version and NPM
+      run: |
+        node -v
+        npm -v
     #Install node.js ${{ env.node-version }}
       #run: sudo apt install nodejs
     #- name: Use node.js ${{ env.node-version }}
