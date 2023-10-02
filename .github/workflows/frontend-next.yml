@@ -23,10 +23,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install NVM
-      run: sudo apt-get update \
-          sudo apt-get install build-essential libssl-dev \
-          curl -o- https://raw.githubusercontent.com/creationix/nvm/v${{ env.nvm-version }}/install.sh | bash \
-          ls
+      run: ls #sudo apt-get update \
+          #sudo apt-get install build-essential libssl-dev \
+          #curl -o- https://raw.githubusercontent.com/creationix/nvm/v${{ env.nvm-version }}/install.sh | bash \
+          #ls
           #nvm ls-remote
           #source ~/.profile
     #Install node.js ${{ env.node-version }}
