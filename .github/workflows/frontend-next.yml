@@ -22,7 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Enable and check NVM version
-      run: ls -a ~/ 
+      run: ls -a ~/.profile 
       #source ~/.nvm/nvm.sh
           #nvm -v
     - name: Check remote version Node.js
