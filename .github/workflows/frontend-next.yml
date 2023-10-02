@@ -13,7 +13,7 @@ on:
         default: 'Warning'
 
 jobs:
-  frontend-requirements-install:
+  frontend-node-install:
 
     runs-on: Ubuntu-latest
     env:
@@ -25,9 +25,9 @@ jobs:
     - name: Install NVM
       run: sudo apt-get update \
           sudo apt-get install build-essential libssl-dev \
-          curl -o- https://raw.githubusercontent.com/creationix/nvm/v${{ env.nvm-version }}/install.sh | bash \
-          source ~/.profile \
-          nvm ls-remote \
+          curl -o- https://raw.githubusercontent.com/creationix/nvm/v${{ env.nvm-version }}/install.sh | bash
+          #source ~/.profile \
+          #nvm ls-remote \
     #Install node.js ${{ env.node-version }}
       #run: sudo apt install nodejs
     - name: Use node.js ${{ env.node-version }}
