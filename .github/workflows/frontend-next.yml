@@ -26,10 +26,8 @@ jobs:
       run: |
           sudo apt-get update
           sudo apt-get install build-essential libssl-dev
-          curl -o- https://raw.githubusercontent.com/creationix/nvm/v${{ env.nvm-version }}/install.sh | bash source ~/.profile
-          ls
-          #nvm ls-remote
-          #
+          curl -o- https://raw.githubusercontent.com/creationix/nvm/v${{ env.nvm-version }}/install.sh | bash source
+          nvm ls-remote
     #Install node.js ${{ env.node-version }}
       #run: sudo apt install nodejs
     - name: Use node.js ${{ env.node-version }}
