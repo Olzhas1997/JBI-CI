@@ -39,7 +39,9 @@ jobs:
     - name: Node.js version
       run: node -v
     - name: Check Installed Dependencies
-      run: npm list
+      run: |
+        npm list
+        pwd
     - name: ESlint run
       run: npm run lint --if-present
           
