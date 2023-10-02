@@ -21,10 +21,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Check NVM version
+    - name: Enable and check NVM version
       run: |
-          #source ~/.nvm/nvm.sh
+          source ~/.nvm/nvm.sh
           nvm -v
+    - name: Check remote version Node.js
+      run: nvm ls-remote
     #Install node.js ${{ env.node-version }}
       #run: sudo apt install nodejs
     #- name: Use node.js ${{ env.node-version }}
