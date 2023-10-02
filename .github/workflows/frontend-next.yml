@@ -26,7 +26,9 @@ jobs:
         echo "[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh" >> $HOME/.profile
         source ~/.profile
         nvm -v
-    - name: Check remote version Node.js
+    - name: |
+        source ~/.profile
+        Check remote version Node.js
       run: nvm -v
     #Install node.js ${{ env.node-version }}
       #run: sudo apt install nodejs
