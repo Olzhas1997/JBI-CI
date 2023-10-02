@@ -28,7 +28,7 @@ jobs:
           sudo apt-get install build-essential libssl-dev
           curl -o- https://raw.githubusercontent.com/creationix/nvm/v${{ env.nvm-version }}/install.sh | bash
     - name: Check NVM version
-      run: nvm -v
+      run: ls -a | grep .nvm
     #Install node.js ${{ env.node-version }}
       #run: sudo apt install nodejs
     - name: Use node.js ${{ env.node-version }}
