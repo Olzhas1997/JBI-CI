@@ -30,6 +30,7 @@ jobs:
       run: |
         source ~/.profile
         nvm -v
+        echo $0
     #Install node.js ${{ env.node-version }}
       #run: sudo apt install nodejs
     #- name: Use node.js ${{ env.node-version }}
