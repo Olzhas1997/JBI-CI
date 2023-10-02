@@ -44,7 +44,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: ./next-admin
+        working-directory: /next-admin
 
     steps:
       - name: Install Dependencies
