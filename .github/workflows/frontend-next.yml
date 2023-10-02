@@ -29,8 +29,7 @@ jobs:
       shell: bash -l {0}
     - name: Check remote version Node.js
       shell: bash -l {0}
-      run: |
-        command -v nvm
+      run: nvm ls-remote
     #Install node.js ${{ env.node-version }}
       #run: sudo apt install nodejs
     #- name: Use node.js ${{ env.node-version }}
