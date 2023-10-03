@@ -47,6 +47,7 @@ jobs:
         working-directory: ./next
 
     steps:
+    - uses: actions/checkout@v3
     - run: pwd
       #- name: Install Dependencies
        # shell: bash -l {0}
