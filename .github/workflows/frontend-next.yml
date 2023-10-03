@@ -93,3 +93,10 @@ jobs:
       run: |
         nvm use ${{ env.node-version }}
         npm run lint --if-present
+        
+  deploy-project:
+    needs: [frontend-next-admin, frontend-next-public]
+    runs-on: Ubuntu-Latest
+    
+    steps:
+    - run: echo "Hello!"
