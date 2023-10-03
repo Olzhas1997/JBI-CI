@@ -16,30 +16,10 @@ env:
   node-version: "19.7.0"
 
 jobs:
-  frontend-node-install:
-    runs-on: Ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v3
-    - name: Enable and check NVM version
-      run: |
-        echo "[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh" >> $HOME/.profile
-        source ~/.profile
-        nvm -v
-      shell: bash -l {0}
-    - name: Install Node.js ${{ env.node-version }}
-      shell: bash -l {0}
-      run: |
-        nvm install ${{ env.node-version }}
-    - name: Check Node.js version and NPM
-      shell: bash -l {0}
-      run: |
-        nvm use ${{ env.node-version }}
-        node -v
-        npm -v
 
   frontend-next-public:
-    needs: frontend-node-install
+    #needs: frontend-node-install
     runs-on: Ubuntu-latest
 
     defaults:
