@@ -39,7 +39,7 @@ jobs:
         npm -v
 
   frontend-next-public:
-    #needs: frontend-node-install
+    needs: frontend-node-install
     runs-on: Ubuntu-latest
 
     defaults:
